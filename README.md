@@ -1,0 +1,6 @@
+# QR_Code_SD
+This repo holds the safetensors & diffusers versions of the QR code conditioned ControlNet for Stable Diffusion v1.5.
+The Stable Diffusion 2.1 version is marginally more effective, as it was developed to address my specific needs. However, this 1.5 version model was also trained on the same dataset for those who are using the older version.
+We use the QR code image as the initial image and the control image, which allows you to generate QR Codes that blend in very naturally with your provided prompt. The strength parameter defines how much noise is added to your QR code and the noisy QR code is then guided towards both your prompt and the QR code image via Controlnet. Use a high strength value between 0.8 and 0.95 and choose a conditioning scale between 0.6 and 2.0. This mode arguably achieves the asthetically most appealing QR code images, but also requires more tuning of the controlnet conditioning scale and the strength value. If the generated image looks way to much like the original QR code, make sure to gently increase the strength value and reduce the conditioning scale. Also check out the examples below.
+
+model: https://huggingface.co/DionTimmer/controlnet_qrcode-control_v1p_sd15
